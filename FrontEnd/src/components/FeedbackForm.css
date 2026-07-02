@@ -1,0 +1,59 @@
+.feedback-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feedback-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.feedback-card-header h2 {
+  color: var(--text-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.feedback-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.field span {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+  background: #fff;
+  color: var(--text-heading);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.hint {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.hint.error {
+  color: var(--error);
+}

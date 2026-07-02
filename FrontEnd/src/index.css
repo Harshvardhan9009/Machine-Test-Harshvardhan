@@ -1,0 +1,123 @@
+:root {
+  --text: #475569;
+  --text-heading: #0f172a;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-soft: #dbeafe;
+  --success: #166534;
+  --success-bg: #dcfce7;
+  --error: #b91c1c;
+  --error-bg: #fee2e2;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  font-family: Inter, system-ui, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.primary-button {
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.banner {
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+}
+
+.banner.success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.banner.error {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+.panel-header h2 {
+  color: var(--text-heading);
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.panel-header p {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.page-intro h2 {
+  color: var(--text-heading);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-intro p {
+  max-width: 56rem;
+  color: var(--text);
+}
+
+.empty-state {
+  color: var(--text);
+  padding: 1rem 0;
+}

@@ -1,0 +1,31 @@
+.filters-bar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.filter-field {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.filter-field span {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.filter-field input,
+.filter-field select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .filters-bar {
+    grid-template-columns: 1fr;
+  }
+}
