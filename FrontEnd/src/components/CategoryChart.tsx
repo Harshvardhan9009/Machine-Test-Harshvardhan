@@ -6,6 +6,7 @@ interface CategoryChartProps {
   loading: boolean
 }
 
+
 export function CategoryChart({ analytics, loading }: CategoryChartProps) {
   const entries = Object.entries(analytics?.byCategory ?? {})
   const maxCount = entries.reduce((max, [, count]) => Math.max(max, count), 0)
