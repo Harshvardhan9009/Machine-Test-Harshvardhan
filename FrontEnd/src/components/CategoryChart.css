@@ -1,29 +1,63 @@
 .bar-list {
   list-style: none;
-  margin: 1rem 0 0;
+  margin: 1.5rem 0 0;
   padding: 0;
   display: grid;
-  gap: 0.85rem;
+  gap: 1.25rem;
+}
+
+.bar-item {
+  display: grid;
+  gap: 0.45rem;
 }
 
 .bar-meta {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.35rem;
   color: var(--text-heading);
   font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.bar-meta span {
+  font-weight: 600;
+}
+
+.bar-meta strong {
+  color: var(--primary);
+  font-size: 1rem;
 }
 
 .bar-track {
-  height: 10px;
+  height: 12px;
   border-radius: 999px;
-  background: #e2e8f0;
+  background: var(--bg);
+  border: 1px solid var(--border);
   overflow: hidden;
+  position: relative;
 }
 
 .bar-fill {
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Category-specific bar colors */
+.bar-fill.bug-report {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.bar-fill.feature-request {
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+}
+
+.bar-fill.general-feedback {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.bar-fill.support {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
 }

@@ -40,7 +40,9 @@ export function FeedbackTable({ feedback, loading }: FeedbackTableProps) {
                 <tr key={item.id}>
                   <td>{formatDate(item.createdAt)}</td>
                   <td>
-                    <span className="category-pill">{item.category}</span>
+                    <span className={`category-pill ${item.category.toLowerCase().replace(/\s+/g, '-')}`}>
+                      {item.category}
+                    </span>
                   </td>
                   <td>{item.comment}</td>
                 </tr>

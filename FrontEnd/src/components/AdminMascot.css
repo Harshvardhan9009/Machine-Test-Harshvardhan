@@ -1,0 +1,98 @@
+.admin-mascot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.admin-mascot-svg {
+  overflow: visible;
+}
+
+.admin-mascot-body {
+  animation: adminMascotFloat 3s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+.admin-mascot-shadow {
+  animation: adminShadowPulse 3s infinite ease-in-out;
+  transform-origin: center;
+  opacity: 0.25;
+}
+
+.admin-mascot-tassel {
+  animation: tasselSway 3s infinite ease-in-out;
+  transform-origin: 60px 22px;
+}
+
+.admin-mascot-tassel-fringe {
+  animation: tasselFringeSway 3s infinite ease-in-out;
+  transform-origin: 48px 34px;
+}
+
+.admin-mascot-eye {
+  animation: adminEyeBlink 4s infinite ease-in-out;
+}
+
+.left {
+  transform-origin: 50px 55px;
+}
+
+.right {
+  transform-origin: 70px 55px;
+}
+
+/* Animations */
+@keyframes adminMascotFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes adminShadowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(0.88);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+}
+
+@keyframes tasselSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes tasselFringeSway {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(2px, 0.5px) rotate(12deg);
+  }
+}
+
+@keyframes adminEyeBlink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.15);
+  }
+}

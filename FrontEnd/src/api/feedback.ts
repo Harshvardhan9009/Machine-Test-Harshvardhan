@@ -10,10 +10,17 @@ import { ApiError } from '../types/feedback'
 const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const token = localStorage.getItem('acowale_crm_token')
+  const authHeaders: Record<string, string> = {}
+  if (token) {
+    authHeaders['Authorization'] = `Bearer ${token}`
+  }
+
   const response = await fetch(`${API_BASE}${path}`, {
     ...init,
     headers: {
       'Content-Type': 'application/json',
+      ...authHeaders,
       ...init?.headers,
     },
   })
@@ -34,6 +41,13 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   }
 
   return response.json() as Promise<T>
+}
+
+export async function loginAdmin(payload: { username: string; password: string }): Promise<{ token: string; username: string }> {
+  return request<{ token: string; username: string }>('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  })
 }
 
 export async function submitFeedback(

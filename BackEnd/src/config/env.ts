@@ -13,9 +13,12 @@ export const env = {
   port: Number(process.env.PORT ?? 3000),
   nodeEnv: process.env.NODE_ENV ?? 'development',
   corsOrigin: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
-  dataFile: process.env.DATA_FILE ?? './data/feedback.json',
+  mongoUri: process.env.MONGO_URI ?? '',
   rateLimitWindowMs: Number(process.env.RATE_LIMIT_WINDOW_MS ?? 900_000),
   rateLimitMax: Number(process.env.RATE_LIMIT_MAX ?? 100),
+  adminUsername: process.env.ADMIN_USERNAME ?? 'admin',
+  adminPassword: process.env.ADMIN_PASSWORD ?? 'admin123',
+  jwtSecret: process.env.JWT_SECRET ?? 'acowale-crm-super-secret-key-change-me',
 }
 
 if (Number.isNaN(env.port) || env.port <= 0) {
@@ -23,5 +26,5 @@ if (Number.isNaN(env.port) || env.port <= 0) {
 }
 
 export function assertRuntimeConfig() {
-  required('DATA_FILE', env.dataFile)
+  required('MONGO_URI', env.mongoUri)
 }

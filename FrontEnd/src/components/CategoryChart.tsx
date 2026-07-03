@@ -26,6 +26,7 @@ export function CategoryChart({ analytics, loading }: CategoryChartProps) {
         <ul className="bar-list">
           {entries.map(([category, count]) => {
             const width = maxCount > 0 ? (count / maxCount) * 100 : 0
+            const colorClass = category.toLowerCase().replace(/\s+/g, '-')
             return (
               <li key={category} className="bar-item">
                 <div className="bar-meta">
@@ -33,7 +34,7 @@ export function CategoryChart({ analytics, loading }: CategoryChartProps) {
                   <strong>{count}</strong>
                 </div>
                 <div className="bar-track" aria-hidden="true">
-                  <div className="bar-fill" style={{ width: `${width}%` }} />
+                  <div className={`bar-fill ${colorClass}`} style={{ width: `${width}%` }} />
                 </div>
               </li>
             )

@@ -13,15 +13,26 @@
 .filter-field span {
   font-weight: 600;
   color: var(--text-heading);
+  font-size: 0.95rem;
 }
 
 .filter-field input,
 .filter-field select {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.7rem 0.85rem;
-  background: #fff;
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  background: var(--bg);
+  color: var(--text-heading);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+  background: var(--surface);
 }
 
 @media (max-width: 768px) {

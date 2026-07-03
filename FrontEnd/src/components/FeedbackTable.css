@@ -1,6 +1,6 @@
 .table-wrap {
   overflow-x: auto;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .feedback-table {
@@ -11,16 +11,25 @@
 
 .feedback-table th,
 .feedback-table td {
-  padding: 0.85rem 0.75rem;
+  padding: 1rem;
   border-bottom: 1px solid var(--border);
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .feedback-table th {
   color: var(--text-heading);
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.feedback-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.feedback-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .feedback-table td {
@@ -30,11 +39,35 @@
 
 .category-pill {
   display: inline-block;
-  padding: 0.25rem 0.6rem;
+  padding: 0.3rem 0.75rem;
   border-radius: 999px;
-  background: var(--primary-soft);
-  color: var(--primary-dark);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Category-specific styling */
+.category-pill.bug-report {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.category-pill.feature-request {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.category-pill.general-feedback {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.category-pill.support {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }

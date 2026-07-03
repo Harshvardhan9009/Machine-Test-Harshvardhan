@@ -1,5 +1,20 @@
-.feedback-page,
-.dashboard-page {
-  display: grid;
-  gap: 1.5rem;
+.feedback-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.feedback-page .page-intro {
+  text-align: center;
+}
+
+.feedback-page .page-intro h2 {
+  font-size: 2.5rem;
+}
+
+.feedback-page .page-intro p {
+  margin: 0.5rem auto 0;
 }

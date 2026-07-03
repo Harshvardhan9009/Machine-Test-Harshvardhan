@@ -6,6 +6,7 @@ import {
   feedbackQuerySchema,
 } from '../schemas/feedback.schema.js'
 import { createFeedback, listFeedback } from '../services/feedback.service.js'
+import { requireAdmin } from '../middleware/auth.js'
 
 export const feedbackRouter = Router()
 
@@ -20,20 +21,20 @@ const submitLimiter = rateLimit({
   },
 })
 
-feedbackRouter.post('/', submitLimiter, (req, res, next) => {
+feedbackRouter.post('/', submitLimiter, async (req, res, next) => {
   try {
     const payload = createFeedbackSchema.parse(req.body)
-    const feedback = createFeedback(payload)
+    const feedback = await createFeedback(payload)
     res.status(201).json(feedback)
   } catch (error) {
     next(error)
   }
 })
 
-feedbackRouter.get('/', (req, res, next) => {
+feedbackRouter.get('/', requireAdmin, async (req, res, next) => {
   try {
     const query = feedbackQuerySchema.parse(req.query)
-    const result = listFeedback(query)
+    const result = await listFeedback(query)
     res.json(result)
   } catch (error) {
     next(error)
